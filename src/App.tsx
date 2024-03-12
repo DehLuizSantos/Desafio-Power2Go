@@ -5,6 +5,8 @@ import ThemeWrapper from './styles/theme/themeProvider';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import 'dayjs/locale/pt-br';
+import { Container } from './styles/container';
+
 export default function App() {
   const persister = createSyncStoragePersister({
     storage: window.localStorage,
@@ -22,7 +24,9 @@ export default function App() {
     <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
       <ThemeWrapper>
         <Notifications position="top-right" />
-        <Router />
+        <Container>
+          <Router />
+        </Container>
       </ThemeWrapper>
     </PersistQueryClientProvider>
   );
