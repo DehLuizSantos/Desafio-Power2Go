@@ -1,5 +1,6 @@
 import * as S from './styles';
 import Logo from '../../../assets/Logo.svg';
+import LogoEcontries from '../../../assets/Econtries.svg';
 import { Link } from 'react-router-dom';
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <button>
           <img src={Logo} alt="André Luiz Santos" />
         </button>
-        <h1>EContries</h1>
+        <img src={LogoEcontries} alt="Econtries" />
       </S.ContainerHeader>
     </S.HeaderWrapper>
   );
