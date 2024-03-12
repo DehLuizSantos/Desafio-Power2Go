@@ -14,6 +14,12 @@ function MyGlobalStyles() {
         a: {
           textDecoration: 'none',
         },
+
+        button: {
+          backgroundColor: 'transparent',
+          border: 'none',
+          cursor: 'pointer',
+        },
       })}
     />
   );
