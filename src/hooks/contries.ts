@@ -2,10 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { CountryData } from '../interfaces/contries';
 import { ContryCardProps } from '../components/atomos/ContriesCard';
+import { useStore } from 'zustand';
+import { useContriesStore } from '../store/contries';
 
 const endpoint = 'https://restcountries.com/v3.1/all';
 
 export function useContries() {
+  const { setContries, contries } = useStore(useContriesStore);
   return useQuery({
     queryKey: ['contries'],
     queryFn: async () => {
@@ -20,8 +23,10 @@ export function useContries() {
           capital: contries.capital,
         };
       });
+      debugger;
+      setContries(formatData);
 
-      return formatData;
+      return contries;
     },
   });
 }
